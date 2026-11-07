@@ -1,73 +1,26 @@
-# React + TypeScript + Vite
+# Absence Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project
 
-Currently, two official plugins are available:
+Absence Lab is an interactive teaching example of a typical absence seizure in childhood absence epilepsy. The 3D explorer links a brain atlas to a synthetic scalp EEG so you can see how the trace changes before, during, and after the event.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Circuit view emphasizes the thalamus and its connections through a faint cortical surface. Anatomy view shows the solid outer structures. Drag to orbit, scroll or pinch to zoom, and select a part on the model or in the inspector. On a phone, the Part, EEG, and Phase tabs are below the model.
 
-## React Compiler
+The recording lasts 14 seconds. Drag or click the EEG to scrub, or use the Before, During, and After shortcuts. Hover, focus, or select an EEG lead to see its approximate electrode pair. With the explorer focused, Space plays or pauses, the arrow keys step by half a second, and 1–3 jump to phases.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Use Node.js 24 LTS and npm. The app opens at `/`.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Medical context
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Typical absence seizure.** A brief generalized seizure with a sudden change in awareness. A child may stop what they are doing and stare, then resume the activity as the seizure ends. Childhood absence epilepsy (CAE) is an epilepsy syndrome in which typical absence seizures are the main seizure type. [ILAE clinical overview](https://www.epilepsydiagnosis.org/seizure/absence-typical-overview.html) · [ILAE classification of generalized epilepsy syndromes](https://doi.org/10.1111/epi.17236)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Scalp EEG and spike-and-wave.** A bipolar EEG lead compares voltages at two scalp electrodes. During a typical absence seizure in CAE, generalized spike-and-wave discharges occur around 3 Hz, with a range of 2.5–4 Hz. The synthetic example shows the pattern in four leads, with larger deflections in the frontal leads. The electrode markers indicate approximate 10–20 positions. [ILAE EEG description](https://www.epilepsydiagnosis.org/syndrome/cae-eeg.html) · [ACNS electrode nomenclature](https://www.acns.org/UserFiles/file/EEGGuideline2Electrodenomenclature_final_v1.pdf)
+
+**Thalamocortical network.** The cortex and thalamus are connected by reciprocal pathways. The curves and moving markers are illustrative and the motion is slowed for display. The anatomy comes from the Human Reference Atlas under CC BY 4.0. [Childhood absence epilepsy network study](https://pubmed.ncbi.nlm.nih.gov/36370186/) · [Model attribution](public/atlas/ATTRIBUTION.txt)

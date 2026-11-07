@@ -1,0 +1,12 @@
+Brain atlas mesh
+----------------
+Source: 3D Reference Organ for Brain, Female v1.3
+Creators: Kristen Browne and Heidi Schlehlein, Human Reference Atlas (HuBMAP)
+Record: https://3d.nih.gov/entries/3DPX-020959
+Source file: https://cdn.humanatlas.io/hra-kg--staging/ref-organ/brain-female/v1.3/assets/3d-vh-f-allen-brain.glb
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+Adapted for Absence Lab. Selected anatomical meshes were grouped, simplified,
+and recentered for the web viewer. The materials, pathway curves, anchors, and
+moving activity markers are illustrative additions.
